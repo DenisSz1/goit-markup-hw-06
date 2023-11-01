@@ -276,24 +276,24 @@ header {
 .modal {
     position: absolute;
     top: 50%;
-    left: 50%;
-    transition-property: transform;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transform: translate(-50%, -50%) scale(1);
+    left: 50%; 
 
-    width: 528px;
-    height: 581px;
+    width: 528px;  
     border-radius: 4px;
 
     padding: 40px;
 
     background-color: var(--primary-white-color);
+    box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.2);
+
+    transition-property: transform;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translate(-50%, -50%) scale(1);
 }
 
 .backdrop.is-hidden .modal {
-    transform: scale(0.2);
-    
+    transform: scale(0.2);    
 }
 
 .close-btn {
@@ -309,17 +309,15 @@ header {
 
     background-color: var(--primary-white-color);
     
-    cursor: pointer;
-}
-
-.close-icon {
     transition-property: fill;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+    cursor: pointer;
 }
 
-.close-icon:hover,
-.close-icon:focus {
+.close-btn:hover,
+.close-btn:focus {
     fill: var(--accent-color);
 }
 
@@ -338,17 +336,28 @@ header {
     position: relative;
 }
 
+.form-el label {
+    margin: 0 0 4px 0;
+    font-size: 12px;
+    line-height: 1.17;
+}
+
+.form-el:not(:first-child) {
+    margin-top: 10px;
+}
+
 .modal-form .form-content {
     width: 448px;
     height: 40px;
     border: 1px solid var(--border-form-color);
     border-radius: 4px;
 
-    margin-top: 4px;
-    margin-bottom: 10px;
+    margin: 0;
     padding-top: 12px;
     padding-bottom: 12px;
     padding-left: 42px;
+
+    outline: none;
 
     cursor: pointer;
 
@@ -359,7 +368,7 @@ header {
 
 .form-icon {
     position: absolute;
-    top: 45%;
+    top: 50%;
     left: 12px;
 
     transition-property: fill;
@@ -376,13 +385,19 @@ header {
 }
 
 .text-area {
-    width: 448px;
+    width: 100%;
     height: 120px;
+    resize: none;
     border: 1px solid var(--border-form-color);
     border-radius: 4px;
 
-    margin-top: 4px;
+    margin: 0;
     padding: 12px 16px;
+}
+
+.text-area::placeholder {
+    font-size: 12px;
+    line-height: 1.17;
 }
 
 .form-el-box {
@@ -415,6 +430,14 @@ header {
     border-radius: 2px;
 }
 
+.checkbox:focus + .check-icon {
+    border: 2px solid var(--accent-color);
+}
+
+.check-icon:focus {
+    border: 2px solid var(--accent-color);
+}
+
 .checkbox:checked + .check-icon {
     border-color: transparent;
     background-color: var(--accent-color);
@@ -445,7 +468,6 @@ header {
     cursor: pointer;
 
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
-    
 }
 
 /*section features*/
@@ -827,6 +849,7 @@ footer {
 }
 
 .first-block {
+    width: 231px;
     margin-right: 70px;
 }
 
@@ -904,6 +927,8 @@ footer {
 .third-block {
     width: 570px;
     height: 86px;
+
+    margin-right: 0;
 }
 
 .third-block .title {
