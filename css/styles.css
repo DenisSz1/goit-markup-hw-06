@@ -279,6 +279,7 @@ header {
     left: 50%; 
 
     width: 528px;  
+    height: 581px;
     border-radius: 4px;
 
     padding: 40px;
@@ -337,7 +338,9 @@ header {
 }
 
 .form-el label {
-    margin: 0 0 4px 0;
+    display: block;
+    margin-bottom: 4px;
+
     font-size: 12px;
     line-height: 1.17;
 }
@@ -384,12 +387,17 @@ header {
     fill: var(--accent-color);
 }
 
+.form-el.size {
+    height: 138px;
+}
+
 .text-area {
-    width: 100%;
+    width: 448px;
     height: 120px;
     resize: none;
     border: 1px solid var(--border-form-color);
     border-radius: 4px;
+    outline: none;
 
     margin: 0;
     padding: 12px 16px;
@@ -398,6 +406,10 @@ header {
 .text-area::placeholder {
     font-size: 12px;
     line-height: 1.17;
+}
+
+.text-area:focus {
+    border-color: var(--accent-color);
 }
 
 .form-el-box {
@@ -466,6 +478,11 @@ header {
     background-color: var(--accent-color);
     color: var(--primary-white-color);
     cursor: pointer;
+
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.86;
+
 
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
 }
